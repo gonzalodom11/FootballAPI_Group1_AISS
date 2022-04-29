@@ -1,6 +1,4 @@
-# Implementación de una API REST 
-
-Práctica 5 de la asignatura AISS
+ AISS | Group 1
 
 La API REST estará formada por dos recursos que permitirán manipular listas de reproducción y canciones respectivamente. 
 
