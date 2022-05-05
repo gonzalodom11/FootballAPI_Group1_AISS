@@ -46,6 +46,7 @@ A **team** has an id, name, league, coach and a group of players. JSON represent
 {
 	"id":"p5",
 	"name":"Manchester United",
+	"league": "Premier League",
 	"coach":"Ralf Rangnick",
 	"players":[
 		{
