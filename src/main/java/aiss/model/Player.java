@@ -8,7 +8,7 @@ public class Player {
 	private String album;
 	private String year;
 
-	public Song() {
+	public Player() {
 	}
 
 	public Song(String title, String artist, String album, String year) {
