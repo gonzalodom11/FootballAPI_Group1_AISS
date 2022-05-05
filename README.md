@@ -1,5 +1,5 @@
  AISS | Group 1 | FutData
-![](images/FutData-logo%20(1).png)
+![](images/FutData-logo%20(2).png)
 The API is made up by 2 resources, they will allow to handle football teams and players. The applicaiton will provide all sorts of information related to football in the 5 major leagues. 
 
 The services related to players is detailed below.  
