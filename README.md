@@ -7,11 +7,11 @@ The services related to players is detailed below.
 ### Player Resource ###
 | HTTP  | URI | Description |
 | ------------- | ------------- | ------------- |
-| GET |  /player | It returns all the players of the application. It is possible to order the songs by the nationality or position with the query parameter "order", that accepts values "nationality", "-nationality",  "position" or "-position". It is also possible to filter the returned players with the  query parameter q, which returns the players whose name, position, nationality includes the string variable sent (no differences between caps and lower case).|
+| GET |  /player | It returns all the players of the application. It is possible to order the players by the nationality or position with the query parameter "order", that accepts values "nationality", "-nationality",  "position" or "-position". It is also possible to filter the returned players with the  query parameter q, which returns the players whose name, position, nationality includes the string variable sent (no differences between caps and lower case).|
 | GET | /player/{playerId} | It returns the player whose id = playerId. If the player does not exist, then it returns "404 Not Found". |
 | POST | /player | It adds a new player whose data are sent in the body of the require message in JSON format (the id must not be sent, since it is automatically genereated). If the name of the player is not valid (null or empty) it returns an error "400 Bad Request". If it is added correctly, it returns "201 Created" with the reference to the URI and the content to the player. |
 | PUT | /player  | It updates the player whose data are sent in the body of the require message in JSON format (the id must be included). If the player does not exist, it returns a "404 Not Found". If it is done correctly, it returns "204 No Content". |
-| DELETE | /song/{songId}  | It deletes the player with id = playerId. If the player does not exist, it returns "404 Not Found". If it done correctly, it returns "204 No Content". |
+| DELETE | /player/{playerId}  | It deletes the player with id = playerId. If the player does not exist, it returns "404 Not Found". If it done correctly, it returns "204 No Content". |
 
 Each **player** has an id, name, surname, position, teamNumber, nationality, team, age. The JSON representation of the resource is:
 ```cpp
