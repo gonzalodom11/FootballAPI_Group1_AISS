@@ -1,6 +1,6 @@
 package aiss.model;
 
-public class Song {
+public class Player {
 
 	private String id;
 	private String title;
