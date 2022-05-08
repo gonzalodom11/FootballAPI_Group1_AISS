@@ -1,69 +1,110 @@
 package aiss.model;
 
 public class Player {
-
 	private String id;
-	private String title;
-	private String artist;
-	private String album;
-	private String year;
+    private String name;
+    private String surname;
+    private String team;
+    private String nationality;
+    private int age;
+    private String position;
+    
+    public Player() {
+    }
 
-	public Player() {
-	}
 
-	public Song(String title, String artist, String album, String year) {
-		this.title = title;
-		this.artist = artist;
-		this.album = album;
-		this.year = year;
-	}
-	
-	public Song(String id, String title, String artist, String album, String year) {
-		this.id=id;
-		this.title = title;
-		this.artist = artist;
-		this.album = album;
-		this.year = year;
-	}
+    public Player(String name, String surname, String team, String nationality, int age, String position) {
+        this.name = name;
+        this.surname = surname;
+        this.team = team;
+        this.nationality = nationality;
+        this.age = age;
+        this.position = position;
+    }
+
+
+
+    public Player(String id, String name, String surname, String team, String nationality, int age,
+            String position) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.team = team;
+        this.nationality = nationality;
+        this.age = age;
+        this.position = position;
+    }
+
 
 	public String getId() {
 		return id;
 	}
 
+
 	public void setId(String id) {
 		this.id = id;
 	}
 
-	public String getTitle() {
-		return title;
+
+	public String getName() {
+		return name;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getArtist() {
-		return artist;
+
+	public String getSurname() {
+		return surname;
 	}
 
-	public void setArtist(String artist) {
-		this.artist = artist;
+
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 
-	public String getAlbum() {
-		return album;
+
+	public String getTeam() {
+		return team;
 	}
 
-	public void setAlbum(String album) {
-		this.album = album;
+
+	public void setTeam(String team) {
+		this.team = team;
 	}
 
-	public String getYear() {
-		return year;
+
+	public String getNationality() {
+		return nationality;
 	}
 
-	public void setYear(String year) {
-		this.year = year;
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
 	}
+
+
+	public int getAge() {
+		return age;
+	}
+
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+
+	public String getPosition() {
+		return position;
+	}
+
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+    
+    
 
 }

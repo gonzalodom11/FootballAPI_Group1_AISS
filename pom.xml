@@ -11,7 +11,7 @@
 
     <properties>
         <!-- PUT HERE YOUR projectId FROM GOOGLE CLOUD CONSOLE -->
-        <project.projectId>aiss-lab5</project.projectId>
+        <project.projectId>futdata-349615</project.projectId>
 
         <appengine.version>1.9.80</appengine.version>        <!-- AppEngine version -->
         <gcloud.version>2.1.0</gcloud.version>        <!-- GCloud version -->

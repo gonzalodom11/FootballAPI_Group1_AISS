@@ -4,22 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
-
+	
 	private String id;
 	private String name;
 	private String league;
+	private String coach;
 	private List<Player> players;
 	
-	
-	
-	public Team(String name) {
+	public Team() {
+		
+	}
+
+	public Team(String id, String name, String league, String coach, List<Player> players) {
+		this.id = id;
 		this.name = name;
+		this.league = league;
+		this.coach = coach;
+		this.players = players;
 	}
-	
-	protected void setPlayers(List<Player> p) {
-		players = p;
+
+	public Team(String name, String league, String coach, List<Player> players) {
+		this.name = name;
+		this.league = league;
+		this.coach = coach;
+		this.players = players;
 	}
-	
+
 	public String getId() {
 		return id;
 	}
@@ -41,17 +51,29 @@ public class Team {
 	}
 
 	public void setLeague(String league) {
-		this.league= league;
+		this.league = league;
 	}
-	
+
+	public String getCoach() {
+		return coach;
+	}
+
+	public void setCoach(String coach) {
+		this.coach = coach;
+	}
+
 	public List<Player> getPlayers() {
 		return players;
 	}
+
+	public void setPlayers(List<Player> players) {
+		this.players = players;
+	}
 	
 	public Player getPlayer(String id) {
-		if (players==null) {
+		if (players==null)
 			return null;
-		}
+		
 		Player player =null;
 		for(Player p: players)
 			if (p.getId().equals(id))
@@ -64,8 +86,8 @@ public class Team {
 	}
 	
 	public void addPlayer(Player p) {
-		if (players==null) {
-			players = new ArrayList<Player>();}
+		if (players==null)
+			players = new ArrayList<Player>();
 		players.add(p);
 	}
 	
@@ -73,7 +95,7 @@ public class Team {
 		players.remove(p);
 	}
 	
-	public void deleteSong(String id) {
+	public void deletePlayer(String id) {
 		Player p = getPlayer(id);
 		if (p!=null)
 			players.remove(p);
