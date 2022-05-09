@@ -27,7 +27,7 @@ Each **player** has an id, name, surname, position, teamNumber, nationality, tea
 }
 ```
 
-
+The services related to teams are detailed below:
 ### Team Resource ###
 | HTTP  | URI | Descripción |
 | ------------- | ------------- | ------------- |
@@ -74,3 +74,12 @@ A **team** has an id, name, league, coach and a group of players. JSON represent
 }
 
 ```
+The services related to games are detailed below:
+### Game Resource ###
+| HTTP  | URI | Descripción |
+| ------------- | ------------- | ------------- |
+| GET | /games  |  |
+| GET | /games/{gameId} ||
+| POST | /games | |
+| PUT | /games | |
+| DELETE | /games/{gameId}  | |
