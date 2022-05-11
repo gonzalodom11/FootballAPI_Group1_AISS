@@ -74,3 +74,15 @@ A **team** has an id, name, league, coach and a group of players. JSON represent
 }
 
 ```
+The services related to games are detailed below:
+### Game Resource ###
+| HTTP  | URI | Descripción |
+| ------------- | ------------- | ------------- |
+| GET | /games  | It returns all the games of the application. It is possible to filter the returned games with the  query parameter goals or team, which returns the games with total number of goals equal or above the parameter <<goals>> or for the parameter <<team>>, it returns the game in which one of the 2 teams are equal to <<team>>|
+| GET | /games/{gameId} ||
+| POST | /games | |
+| PUT | /games | |
+| DELETE | /games/{gameId}  | |
+
+If you want to use FutData, then use the link below:
+https://futdata-349615.appspot.com/
