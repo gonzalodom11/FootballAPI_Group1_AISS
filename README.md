@@ -13,6 +13,7 @@ The services related to players is detailed below.
 | PUT | /player  | It updates the player whose data are sent in the body of the require message in JSON format (the id must be included). If the player does not exist, it returns a "404 Not Found". If it is done correctly, it returns "204 No Content". |
 | DELETE | /player/{playerId}  | It deletes the player with id = playerId. If the player does not exist, it returns "404 Not Found". If it done correctly, it returns "204 No Content". |
 
+
 Each **player** has an id, name, surname, position, teamNumber, nationality, team, age. The JSON representation of the resource is:
 ```cpp
 {
@@ -79,10 +80,35 @@ The services related to games are detailed below:
 | HTTP  | URI | Descripción |
 | ------------- | ------------- | ------------- |
 | GET | /games  | It returns all the games of the application. It is possible to filter the returned games with the  query parameter goals or team, which returns the games with total number of goals equal or above the parameter <<goals>> or for the parameter <<team>>, it returns the game in which one of the 2 teams are equal to <<team>>|
-| GET | /games/{gameId} ||
-| POST | /games | |
-| PUT | /games | |
-| DELETE | /games/{gameId}  | |
+| GET | /games/{gameId} |It returns the game with id = gameId. If the team does not exist, it returns a "404 Not Found".|
+| POST | /games | It adds a new game. The data of the game are provided in the body of the request message in JSON format. If the name of the teams  are not valid(null or empty), it returns an error "400 Bad Request". If it is added correctly, it returns "201 Created" with the reference to the URI and the content of the game. |
+| PUT | /games | It updates the game whose data are sent in the body of the require message in JSON format (the id must be included). If the player does not exist, it returns a "404 Not Found". If it is done correctly, it returns "204 No Content". |
+| DELETE | /games/{gameId}  | It deletes the game with id= gameId. If the team or the player do not exist, it returns "404 Not Found". If it is added correctly, it returns "204 No Content". |
+	
+A game has an id, teamHome, teamAway, goalsHome, goalsAway, date and league. JSON representation as follows:
 
-If you want to use FutData, then use the link below:
+```cpp
+{
+	"id":"g4",
+	"teamHome":"Real Betis",
+	"teamAway":"FC Sevilla",
+	"goalsHome": 2,
+	"goalsAway":2,
+	"date": "05.05.2022",
+	"league":"La Liga"
+}
+
+```
+
+### League Resource ###
+| HTTP  | URI | Descripción |
+| ------------- | ------------- | ------------- |
+| GET | /leagues  | It returns all the leagues. It is possible to filter the returned games with the  query parameter goals or team, which returns the games with total number of goals equal or above the parameter <<goals>> or for the parameter <<team>>, it returns the game in which one of the 2 teams are equal to <<team>>|
+| GET | /games/{gameId} |It returns the game with id = gameId. If the team does not exist, it returns a "404 Not Found".|
+| POST | /games | It adds a new game. The data of the game are provided in the body of the request message in JSON format. If the name of the teams  are not valid(null or empty), it returns an error "400 Bad Request". If it is added correctly, it returns "201 Created" with the reference to the URI and the content of the game. |
+| PUT | /games | It updates the game whose data are sent in the body of the require message in JSON format (the id must be included). If the player does not exist, it returns a "404 Not Found". If it is done correctly, it returns "204 No Content". |
+| DELETE | /games/{gameId}  | It deletes the game with id= gameId. If the team or the player do not exist, it returns "404 Not Found". If it is added correctly, it returns "204 No Content". |
+
+	
+If you want to use FutData, then click the link below:
 https://futdata-349615.appspot.com/
