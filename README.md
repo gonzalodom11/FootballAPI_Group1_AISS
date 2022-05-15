@@ -1,6 +1,6 @@
  AISS | Group 1 | FutData
 ![](images/FutData-logo%20(2).png)
-The API is made up by 2 resources, they will allow to handle football teams and players. The applicaiton will provide all sorts of information related to football in the 5 major leagues. 
+The API is made up by 2 resources, they will allow to handle football teams and players. The applicaiton will provide all sorts of information related to football in the 5 major leagues. FutData -> https://futdata-349615.appspot.com/
 
 The services related to players is detailed below.  
 
@@ -104,10 +104,28 @@ A game has an id, teamHome, teamAway, goalsHome, goalsAway, date and league. JSO
 | HTTP  | URI | Descripción |
 | ------------- | ------------- | ------------- |
 | GET | /leagues  | It returns all the leagues. It is possible to filter the returned games with the  query parameter goals or team, which returns the games with total number of goals equal or above the parameter <<goals>> or for the parameter <<team>>, it returns the game in which one of the 2 teams are equal to <<team>>|
-| GET | /games/{gameId} |It returns the game with id = gameId. If the team does not exist, it returns a "404 Not Found".|
-| POST | /games | It adds a new game. The data of the game are provided in the body of the request message in JSON format. If the name of the teams  are not valid(null or empty), it returns an error "400 Bad Request". If it is added correctly, it returns "201 Created" with the reference to the URI and the content of the game. |
-| PUT | /games | It updates the game whose data are sent in the body of the require message in JSON format (the id must be included). If the player does not exist, it returns a "404 Not Found". If it is done correctly, it returns "204 No Content". |
-| DELETE | /games/{gameId}  | It deletes the game with id= gameId. If the team or the player do not exist, it returns "404 Not Found". If it is added correctly, it returns "204 No Content". |
+| GET | /leagues/{leagueId} | It returns the league with id = gameId. If the league does not exist, it returns a "404 Not Found".|
+| POST | /leagues | It adds a new league. The data of the league are provided in the body of the request message in JSON format. If the name of the league  is not valid(null or empty), it returns an error "400 Bad Request". Moreover, if the teams or games attribute is not null, then it also returns the same error since games and teams are not editable from this method. If it is added correctly, it returns "201 Created" with the reference to the URI and the content of the game. |
+| POST | /leagues/{leagueId}/{teamId} | It adds a the team with id = teamId to the league with id = leagueId. It the league or the team are null, it will return an error. If the team is already in the league it will return an error too. |
+| POST | /leagues/{leagueId}/{gameId} | It will add the game with id = gameId to the league with id = leagueId. It returns an error if the game or the league are null or the game is already in the league |
+| PUT | /leagues | It updates the league whose data are sent in the body of the require message in JSON format (the id must be included). If the league does not exist, it returns a "404 Not Found". Games and teams attributes have to be null since they are not editable from this method, otherwise it will return 404 error. If it is done correctly, it returns "204 No Content". |
+| DELETE | /leagues/{leagueId}  | It deletes the league with id= leagueId. If the league does not exist, it returns "404 Not Found". If it is added correctly, it returns "204 No Content". |
+| DELETE | leagues/{leagueId}/{teamId} | It deletes the team with id = teamId which is the league with id = leagueId. It will return an error whether the league or the team are null. |
+| DELETE | leagues/{leagueId}/{gameId} | It deletes the game with id = gameId which is the league with id = leagueId. It will return an error whether the league or the game are null. | 
+	
+A league has an id, name, country,  a list of teams and a list of games. JSON representation as follows:
+
+```cpp
+{
+	"id":"l5",
+	"name":"La Liga",
+	"country":"Spain",
+	"teams": [{"id":"t0","name":"Betis Sevilla", ...}, {...}, {...}],
+	"games": [{"id":"g4","teamHome":"Real Betis","teamAway":"FC Sevilla","goalsHome":2,...}, {...}, {...}],
+	
+}
+
+```
 
 	
 If you want to use FutData, then click the link below:
