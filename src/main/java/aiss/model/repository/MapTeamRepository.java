@@ -58,7 +58,7 @@ public class MapTeamRepository implements TeamRepository{
 		cr7.setNationality("Portugal");
 		cr7.setTeam("Betis Sevilla");
 		cr7.setAge(37);
-		cr7.setPosition("Striker");
+		cr7.setPosition(Position.STRIKER);
 		addPlayer(cr7);
 		
 		addPlayer(t1.getId(), cr7.getId());
@@ -73,6 +73,8 @@ public class MapTeamRepository implements TeamRepository{
 		addPlayer(lm10);
 		
 		addPlayer(t1.getId(), lm10.getId());
+
+
 		
 		//create game
 		Game g1 = new Game();
