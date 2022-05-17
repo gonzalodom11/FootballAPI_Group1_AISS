@@ -4,7 +4,7 @@ package aiss.model;
 
 public class Player {
 
-	private enum Position {GOALKEEPER, DEFENDER, MIDFIELDER, STRIKER};
+	public enum Position {GOALKEEPER, DEFENDER, MIDFIELDER, STRIKER};
 
 	private String id;
     private String name;
@@ -12,7 +12,7 @@ public class Player {
     private String team;
     private String nationality;
     private int age;
-    private Position position;
+    public Position position;
 
     public Player() {
     }
