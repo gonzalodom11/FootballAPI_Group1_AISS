@@ -55,10 +55,10 @@ public class TeamResource {
 	@GET
 	@Produces("application/json")
 	public Collection<Team> getAll(@QueryParam("order") String order, 
-			@QueryParam("name") String name)
-	{/*
-		List<Team> result = new ArrayList<>(); 
-		result = (List<Team>) repository.getAllTeams();
+			@QueryParam("name") String name, @QueryParam("limit") Integer limit, @QueryParam("offset") Integer offset)
+	{
+		List<Team> result = new ArrayList<>(repository.getAllTeams()); 
+		
 		
 		if (order != null) {
 			if (order.equals("name")) {
@@ -69,8 +69,31 @@ public class TeamResource {
 				throw new BadRequestException("The order parameter must be 'name' or '-name'.");
 			}
 		}
-		return result;*/
-		return repository.getAllTeams();
+		if (limit == null) {
+			return result;
+		}
+		
+		if (offset<0) throw new BadRequestException("Offset must be >=0 but was "+offset+"!");
+	    if (limit<-1) throw new BadRequestException("Limit must be >=-1 but was "+limit+"!");
+
+	    if (offset>0) {
+	        if (offset >= result.size()) {
+	            return result.subList(0, 0); //return empty.
+	        }
+	        if (limit >-1) {
+	            //apply offset and limit
+	            return result.subList(offset, Math.min(offset+limit, result.size()));
+	        } else {
+	            //apply just offset
+	            return result.subList(offset, result.size());
+	        }
+	    } else if (limit >-1) {
+	        //apply just limit
+	        return result.subList(0, Math.min(limit, result.size()));
+	    } else {
+	        return result.subList(0, result.size());
+	    }
+	    //return result;
 	}
 	
 	
@@ -137,7 +160,7 @@ public class TeamResource {
 	
 	@DELETE
 	@Path("/{id}")
-	public Response remoceTeam(@PathParam("id") String id) {
+	public Response removeTeam(@PathParam("id") String id) {
 		Team toberemoved=repository.getTeam(id);
 		if (toberemoved == null)
 			throw new NotFoundException("The team with id="+ id +" was not found");

@@ -1,5 +1,6 @@
 package aiss.model.repository;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -8,6 +9,7 @@ import java.util.Map;
 import aiss.model.Game;
 import aiss.model.League;
 import aiss.model.Player;
+import aiss.model.Position;
 import aiss.model.Team;
 
 public class MapTeamRepository implements TeamRepository{
@@ -76,8 +78,8 @@ public class MapTeamRepository implements TeamRepository{
 		
 		//create game
 		Game g1 = new Game();
-		g1.setTeamHome("Real Betis");
-		g1.setTeamAway("FC Sevilla");
+		g1.setTeamHome(t1);
+		g1.setTeamAway(t2);
 		g1.setGoalsHome(2);
 		g1.setGoalsAway(2);
 		g1.setDate("05.05.2022");
@@ -281,6 +283,17 @@ public class MapTeamRepository implements TeamRepository{
 	@Override
 	public void removeGameLeague(String leagueId, String gameId) {
 		getLeague(leagueId).deleteGame(gameId);
+	}
+
+	@Override
+	public Collection<Game> getGamesOfTeam(String teamId) {
+		List<Game> gameList = new ArrayList<>();
+		for(Game game : getAllGames()) {
+			if (game.getTeamHome().getId().equals(teamId) || game.getTeamAway().getId().equals(teamId)) {
+				gameList.add(game);
+			}
+		}
+		return gameList;
 	}
 
 }

@@ -25,7 +25,7 @@ public class Player {
 
 
     public Player(String id, String name, String surname, String team, String nationality, int age,
-            String position) {
+    		String position) {
         this.id = id;
         this.name = name;
         this.surname = surname;
