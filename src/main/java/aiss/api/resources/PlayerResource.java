@@ -121,7 +121,7 @@ public class PlayerResource {
 			oldPlayer.setNationality(player.getNationality());
 		
 		if (player.getAge()!=0)
-			oldPlayer.setNationality(player.getNationality());
+			oldPlayer.setAge(player.getAge());
 		
 		if (player.getPosition()!=null)
 			oldPlayer.setPosition(player.getPosition());
