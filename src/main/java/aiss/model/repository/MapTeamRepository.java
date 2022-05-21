@@ -74,6 +74,7 @@ public class MapTeamRepository implements TeamRepository{
 		
 		addPlayer(t1.getId(), lm10.getId());
 		
+		
 		//create game
 		Game g1 = new Game();
 		g1.setTeamHome("Real Betis");
