@@ -40,15 +40,15 @@ public class MapTeamRepository implements TeamRepository{
 		
 		// create teams for la liga
 		Team t1 = new Team();
-		t1.setName("Betis Sevilla");
+		t1.setName("Sevilla FC");
 		t1.setLeague("La Liga");
-		t1.setCoach("Manuel Pellegrini");
+		t1.setCoach("Julen Lopetegui");
 		addTeam(t1);
 		
 		Team t2 = new Team();
-		t2.setName("FC Sevilla");
+		t2.setName("Real Betis");
 		t2.setLeague("La Liga");
-		t2.setCoach("Julen Lopetegui");
+		t2.setCoach("Manuel Pellegrini");
 		addTeam(t2);
 		
 		Team t3 = new Team();
@@ -102,37 +102,183 @@ public class MapTeamRepository implements TeamRepository{
 		t10.setCoach("R. Rangnick");
 		addTeam(t10);
 		
+		
+		//create teams for serie A
+		
+		Team t11 = new Team();
+		t11.setName("Juventus");
+		t11.setLeague("Serie A");
+		t11.setCoach("Massimiliano Allegri");
+		addTeam(t11);
+		
+		Team t12 = new Team();
+		t12.setName("Milan");
+		t12.setLeague("Serie A");
+		t12.setCoach("Stefano Pioli");
+		addTeam(t12);
+		
+		Team t13 = new Team();
+		t13.setName("Inter");
+		t13.setLeague("Serie A");
+		t13.setCoach("Simone Inzaghi");
+		addTeam(t13);
+		
+		Team t14 = new Team();
+		t14.setName("Roma");
+		t14.setLeague("Serie A");
+		t14.setCoach("Jose Mourinho");
+		addTeam(t14);
+		
+		Team t15 = new Team();
+		t15.setName("Napoli");
+		t15.setLeague("Serie A");
+		t15.setCoach("Luciano Spalletti");
+		addTeam(t15);
+		
+		
+		
+		//create teams for bundesliga
+				
+		Team t16 = new Team();
+		t16.setName("Bayern");
+		t16.setLeague("Bundesliga");
+		t16.setCoach("Julian Nagelsmann");
+		addTeam(t16);
+		
+		Team t17 = new Team();
+		t17.setName("B. Dormund");
+		t17.setLeague("Bundesliga");
+		t17.setCoach("Marco Rose");
+		addTeam(t17);
+		
+		
+		Team t18 = new Team();
+		t18.setName("Leverkusen");
+		t18.setLeague("Bundesliga");
+		t18.setCoach("Gerardo Seoane");
+		addTeam(t18);
+		
+		Team t19 = new Team();
+		t19.setName("Leipzig");
+		t19.setLeague("Bundesliga");
+		t19.setCoach("Domenico Tedesco");
+		addTeam(t19);
+		
+		Team t20 = new Team();
+		t20.setName("Mainz 05");
+		t20.setLeague("Bundesliga");
+		t20.setCoach("Bo Svensson");
+		addTeam(t20);
+		
+		
+		
+		
+		//create teams for ligue 1
+		
+		Team t21 = new Team();
+		t21.setName("Paris Saint Germain");
+		t21.setLeague("Ligue 1");
+		t21.setCoach("Mauricio Pochettino");
+		addTeam(t21);
+		
+		Team t22 = new Team();
+		t22.setName("Marsella");
+		t22.setLeague("Ligue 1");
+		t22.setCoach("Jorge Sampaoli");
+		addTeam(t22);
+		
+		Team t23 = new Team();
+		t23.setName("Monaco");
+		t23.setLeague("Ligue 1");
+		t23.setCoach("Phillippe Clement");
+		addTeam(t23);
+		
+		Team t24 = new Team();
+		t24.setName("Lyon");
+		t24.setLeague("Ligue 1");
+		t24.setCoach("Peter Bosz");
+		addTeam(t24);
+		
+		Team t25 = new Team();
+		t25.setName("Rennes");
+		t25.setLeague("Ligue 1");
+		t25.setCoach("Bruno Genesio");
+		addTeam(t25);
+		
+		
+		
+		
 		//create players for la liga
 		
+		Player lo5  = new Player();
+		lo5.setName("Ocampos");
+		lo5.setSurname("Lucas");
+		lo5.setNationality("Argentina");
+		lo5.setTeam("FC Sevilla");
+		lo5.setAge(27);
+		lo5.setPosition("Striker");
+		addPlayer(lo5);
+		
+		addPlayer(t1.getId(), lo5.getId());
+		
+		Player ir10 = new Player();
+		ir10.setName("Ivan");
+		ir10.setSurname("Rakitic");
+		ir10.setNationality("Croatia");
+		ir10.setTeam("FC Sevilla");
+		ir10.setAge(34);
+		ir10.setPosition("Midfielder");
+		addPlayer(ir10);
+		
+		addPlayer(t1.getId(), ir10.getId());
+		
+		Player dc20 = new Player();
+		dc20.setName("Carlos");
+		dc20.setSurname("Diego");
+		dc20.setNationality("Brazil");
+		dc20.setTeam("FC Sevilla");
+		dc20.setAge(29);
+		dc20.setPosition("Defender");
+		addPlayer(dc20);
+		
+		addPlayer(t1.getId(), dc20.getId());
 		
 		
+		
+		
+		
+		//create players for premier league
 		Player cr7 = new Player();
-		cr7.setName("Cristiano");
-		cr7.setSurname("Ronaldo");
+		cr7.setName("Ronaldo");
+		cr7.setSurname("Cristiano");
 		cr7.setNationality("Portugal");
-		cr7.setTeam("Betis Sevilla");
+		cr7.setTeam("Manchester United");
 		cr7.setAge(37);
 		cr7.setPosition("Striker");
 		addPlayer(cr7);
 		
-		addPlayer(t1.getId(), cr7.getId());
+		addPlayer(t10.getId(), cr7.getId());
 		
+		
+		
+		
+		//create players for ligue 1
 		Player lm10 = new Player();
-		lm10.setName("Leo");
-		lm10.setSurname("Messi");
-		lm10.setTeam("FC Sevilla");
+		lm10.setName("Messi");
+		lm10.setSurname("Lionel)");
+		lm10.setTeam("Paris Saint Germain");
 		lm10.setNationality("Argentina");
 		lm10.setAge(35);
 		lm10.setPosition("Striker");
 		addPlayer(lm10);
 		
-		addPlayer(t1.getId(), lm10.getId());
+		addPlayer(t21.getId(), lm10.getId());
 		
 		//create games for la liga
 		Game g1 = new Game();
 		g1.setTeamHome("Real Betis");
 		g1.setTeamAway("FC Sevilla");
-		g1.setGoalsHome(2);
+		g1.setGoalsHome(0);
 		g1.setGoalsAway(2);
 		g1.setDate("05.05.2022");
 		g1.setLeague("La Liga");
@@ -146,6 +292,37 @@ public class MapTeamRepository implements TeamRepository{
 		g2.setDate("04.03.2022");
 		g2.setLeague("La Liga");
 		addGame(g2);
+		
+		Game g3 = new Game();
+		g3.setTeamHome("Real Madrid");
+		g3.setTeamAway("Atletico de Madrid");
+		g3.setGoalsHome(1);
+		g3.setGoalsAway(1);
+		g3.setDate("12.03.2022");
+		g3.setLeague("La Liga");
+		addGame(g3);
+		
+		Game g4 = new Game();
+		g4.setTeamHome("FC Barcelona");
+		g4.setTeamAway("Real Madrid");
+		g4.setGoalsHome(4);
+		g4.setGoalsAway(0);
+		g4.setDate("16.03.2022");
+		g4.setLeague("La Liga");
+		addGame(g4);
+		
+		Game g5 = new Game();
+		g5.setTeamHome("Real Betis");
+		g5.setTeamAway("Atletico de Madrid");
+		g5.setGoalsHome(0);
+		g5.setGoalsAway(0);
+		g5.setDate("24.04.2022");
+		g5.setLeague("La Liga");
+		addGame(g5);
+		
+		
+		
+		
 		
 		//create Leagues
 		League l1 = new League();
@@ -183,7 +360,9 @@ public class MapTeamRepository implements TeamRepository{
 		
 		addGameLeague(l1.getId(), g1.getId());
 		addGameLeague(l1.getId(), g2.getId());
-		
+		addGameLeague(l1.getId(), g3.getId());
+		addGameLeague(l1.getId(), g4.getId());
+		addGameLeague(l1.getId(), g5.getId());
 		
 		//add teams and games to premier league
 		
@@ -192,6 +371,56 @@ public class MapTeamRepository implements TeamRepository{
 		addTeamLeague(l2.getId(), t8.getId());
 		addTeamLeague(l2.getId(), t9.getId());
 		addTeamLeague(l2.getId(), t10.getId());
+		
+		addGameLeague(l2.getId(), g6.getId());
+		addGameLeague(l2.getId(), g7.getId());
+		addGameLeague(l2.getId(), g8.getId());
+		addGameLeague(l2.getId(), g9.getId());
+		addGameLeague(l2.getId(), g10.getId());
+		
+		
+		//add teams and games to serie A
+		
+		addTeamLeague(l3.getId(), t11.getId());
+		addTeamLeague(l3.getId(), t12.getId());
+		addTeamLeague(l3.getId(), t13.getId());
+		addTeamLeague(l3.getId(), t14.getId());
+		addTeamLeague(l3.getId(), t15.getId());
+		
+		addGameLeague(l3.getId(), g11.getId());
+		addGameLeague(l3.getId(), g12.getId());
+		addGameLeague(l3.getId(), g13.getId());
+		addGameLeague(l3.getId(), g14.getId());
+		addGameLeague(l3.getId(), g15.getId());
+		
+		//add teams and games to bundesliga
+		
+		addTeamLeague(l4.getId(), t16.getId());
+		addTeamLeague(l4.getId(), t17.getId());
+		addTeamLeague(l4.getId(), t18.getId());
+		addTeamLeague(l4.getId(), t19.getId());
+		addTeamLeague(l4.getId(), t20.getId());
+		
+		addGameLeague(l4.getId(), g16.getId());
+		addGameLeague(l4.getId(), g17.getId());
+		addGameLeague(l4.getId(), g18.getId());
+		addGameLeague(l4.getId(), g19.getId());
+		addGameLeague(l4.getId(), g20.getId());
+		
+		
+		//add teams and games to ligue 1
+		
+		addTeamLeague(l5.getId(), t21.getId());
+		addTeamLeague(l5.getId(), t22.getId());
+		addTeamLeague(l5.getId(), t23.getId());
+		addTeamLeague(l5.getId(), t24.getId());
+		addTeamLeague(l5.getId(), t25.getId());
+		
+		addGameLeague(l5.getId(), g21.getId());
+		addGameLeague(l5.getId(), g22.getId());
+		addGameLeague(l5.getId(), g23.getId());
+		addGameLeague(l5.getId(), g24.getId());
+		addGameLeague(l5.getId(), g25.getId());
 		
 		
 	}
