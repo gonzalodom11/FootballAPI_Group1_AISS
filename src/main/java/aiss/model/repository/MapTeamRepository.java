@@ -243,8 +243,142 @@ public class MapTeamRepository implements TeamRepository{
 		
 		addPlayer(t1.getId(), dc20.getId());
 		
+		Player cb25 = new Player();
+		cb25.setName("Claudio");
+		cb25.setSurname("Bravo");
+		cb25.setNationality("Chile");
+		cb25.setTeam("Real Betis");
+		cb25.setAge(38);
+		cb25.setPosition("Goalkeeper");
+		addPlayer(cb25);
+		
+		addPlayer(t2.getId(), cb25.getId());
+		
+		Player jm7 = new Player();
+		jm7.setName("Miguel");
+		jm7.setSurname("Juan");
+		jm7.setNationality("Spain");
+		jm7.setTeam("Real Betis");
+		jm7.setAge(28);
+		jm7.setPosition("Midfielder");
+		addPlayer(jm7);
+		
+		addPlayer(t2.getId(), jm7.getId());
+		
+		Player nf8 = new Player();
+		nf8.setName("Fekir");
+		nf8.setSurname("Nabil");
+		nf8.setNationality("France");
+		nf8.setTeam("Real Betis");
+		nf8.setAge(28);
+		nf8.setPosition("Midfielder");
+		addPlayer(nf8);
+		
+		addPlayer(t2.getId(), nf8.getId());
+		
+		Player pg16 = new Player();
+		pg16.setName("Pedro");
+		pg16.setSurname("Gonzalez");
+		pg16.setNationality("Spain");
+		pg16.setTeam("FC Barcelona");
+		pg16.setAge(19);
+		pg16.setPosition("Midfielder");
+		addPlayer(pg16);
+		
+		addPlayer(t3.getId(), pg16.getId());
 		
 		
+		Player at11 = new Player();
+		at11.setName("Adama");
+		at11.setSurname("Traore");
+		at11.setNationality("Spain");
+		at11.setTeam("FC Barcelona");
+		at11.setAge(26);
+		at11.setPosition("Striker");
+		addPlayer(at11);
+		
+		addPlayer(t3.getId(), at11.getId());
+		
+		
+		Player ts1 = new Player();
+		ts1.setName("Marc-Andre");
+		ts1.setSurname("Ter Stegen");
+		ts1.setNationality("Germany");
+		ts1.setTeam("FC Barcelona");
+		ts1.setAge(30);
+		ts1.setPosition("Goalkeeper");
+		addPlayer(ts1);
+		
+		addPlayer(t3.getId(), ts1.getId());
+		
+		
+		Player tc1 = new Player();
+		tc1.setName("Courtois");
+		tc1.setSurname("Thibaut");
+		tc1.setNationality("Belgium");
+		tc1.setTeam("Real Madrid");
+		tc1.setAge(29);
+		tc1.setPosition("Goalkeeper");
+		addPlayer(tc1);
+		
+		addPlayer(t4.getId(), tc1.getId());
+		
+		Player kb9 = new Player();
+		kb9.setName("Benzema");
+		kb9.setSurname("Kareem");
+		kb9.setNationality("France");
+		kb9.setTeam("Real Madrid");
+		kb9.setAge(34);
+		kb9.setPosition("Striker");
+		addPlayer(kb9);
+		
+		addPlayer(t4.getId(), kb9.getId());
+		
+		Player dc19 = new Player();
+		dc19.setName("Ceballos");
+		dc19.setSurname("Daniel");
+		dc19.setNationality("Spain");
+		dc19.setTeam("Real Madrid");
+		dc19.setAge(25);
+		dc19.setPosition("Midfielder");
+		addPlayer(dc19);
+		
+		addPlayer(t4.getId(), dc19.getId());
+		
+		
+		Player ag8 = new Player();
+		ag8.setName("Griezmann");
+		ag8.setSurname("Antoine");
+		ag8.setNationality("France");
+		ag8.setTeam("Atletico de Madrid");
+		ag8.setAge(31);
+		ag8.setPosition("Striker");
+		addPlayer(ag8);
+		
+		addPlayer(t5.getId(), ag8.getId());
+		
+		Player jo13 = new Player();
+		jo13.setName("Oblak");
+		jo13.setSurname("Jan");
+		jo13.setNationality("Slovenia");
+		jo13.setTeam("Atletico de Madrid");
+		jo13.setAge(29);
+		jo13.setPosition("Goalkeeper");
+		addPlayer(jo13);
+		
+		addPlayer(t5.getId(), jo13.getId());
+		
+		
+		Player ls9 = new Player();
+		ls9.setName("Suarez");
+		ls9.setSurname("Luis");
+		ls9.setNationality("Uruguay");
+		ls9.setTeam("Atletico de Madrid");
+		ls9.setAge(35);
+		ls9.setPosition("Striker");
+		addPlayer(ls9);
+		
+		addPlayer(t5.getId(), ls9.getId());
 		
 		
 		//create players for premier league
@@ -260,6 +394,9 @@ public class MapTeamRepository implements TeamRepository{
 		addPlayer(t10.getId(), cr7.getId());
 		
 		
+		//create players for serie A
+		
+		
 		
 		
 		//create players for ligue 1
@@ -273,6 +410,12 @@ public class MapTeamRepository implements TeamRepository{
 		addPlayer(lm10);
 		
 		addPlayer(t21.getId(), lm10.getId());
+		
+		
+		
+		
+		
+		
 		
 		//create games for la liga
 		Game g1 = new Game();
@@ -321,7 +464,15 @@ public class MapTeamRepository implements TeamRepository{
 		addGame(g5);
 		
 		
+		//create games for premier league
 		
+		
+		
+		//create games for serie A
+		
+		
+		
+		//create games for ligue 1
 		
 		
 		//create Leagues
