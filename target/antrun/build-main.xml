@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="maven-antrun-" default="main">
   <target name="main">
-    <property name="target.webapp.dir" value="C:\Users\dani-\bwSyncShare\SS2022\AISS\integration-project\lab5-implementing-restapi-master\target/lab5-implementing-restapi-1.0-SNAPSHOT" />
-    <property name="src.webapp.dir" value="C:\Users\dani-\bwSyncShare\SS2022\AISS\integration-project\lab5-implementing-restapi-master/src/main/webapp" />
+    <property name="target.webapp.dir" value="C:\Users\jdvil\git\FootballAPI_Group1_AISS\target/lab5-implementing-restapi-1.0-SNAPSHOT" />
+    <property name="src.webapp.dir" value="C:\Users\jdvil\git\FootballAPI_Group1_AISS/src/main/webapp" />
     <sync todir="${target.webapp.dir}" includeEmptyDirs="true" verbose="true">
       <fileset dir="${src.webapp.dir}" />
       <preserveintarget>

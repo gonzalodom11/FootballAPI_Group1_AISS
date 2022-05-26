@@ -1,31 +1,40 @@
 package aiss.model;
 
+
+
 public class Player {
+
+	public enum Position {GOALKEEPER, DEFENDER, MIDFIELDER, STRIKER};
+
 	private String id;
     private String name;
     private String surname;
     private String team;
     private String nationality;
     private int age;
-    private String position;
-    
+    public Position position;
+
     public Player() {
     }
 
 
-    public Player(String name, String surname, String team, String nationality, int age, String position) {
+    public Player(String name, String surname, String team, String nationality, int age, Position position) {
         this.name = name;
         this.surname = surname;
         this.team = team;
         this.nationality = nationality;
         this.age = age;
-        this.position = position;
+        this.position = position ;
     }
 
 
 
     public Player(String id, String name, String surname, String team, String nationality, int age,
+<<<<<<< HEAD
     		String position) {
+=======
+            Position position) {
+>>>>>>> main
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -96,12 +105,12 @@ public class Player {
 	}
 
 
-	public String getPosition() {
+	public Position getPosition() {
 		return position;
 	}
 
 
-	public void setPosition(String position) {
+	public void setPosition(Position position) {
 		this.position = position;
 	}
     

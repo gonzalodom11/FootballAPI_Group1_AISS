@@ -11,6 +11,7 @@ import aiss.model.League;
 import aiss.model.Player;
 import aiss.model.Position;
 import aiss.model.Team;
+import aiss.model.Player.Position;
 
 public class MapTeamRepository implements TeamRepository{
 	
@@ -42,7 +43,7 @@ public class MapTeamRepository implements TeamRepository{
 		
 		// create team
 		Team t1 = new Team();
-		t1.setName("Betis Sevilla");
+		t1.setName("Real Betis");
 		t1.setLeague("La Liga");
 		t1.setCoach("Manuel Pellegrini");
 		addTeam(t1);
@@ -58,9 +59,9 @@ public class MapTeamRepository implements TeamRepository{
 		cr7.setName("Cristiano");
 		cr7.setSurname("Ronaldo");
 		cr7.setNationality("Portugal");
-		cr7.setTeam("Betis Sevilla");
+		cr7.setTeam("Real Betis");
 		cr7.setAge(37);
-		cr7.setPosition("Striker");
+		cr7.setPosition(Position.STRIKER);
 		addPlayer(cr7);
 		
 		addPlayer(t1.getId(), cr7.getId());
@@ -71,10 +72,23 @@ public class MapTeamRepository implements TeamRepository{
 		lm10.setTeam("FC Sevilla");
 		lm10.setNationality("Argentina");
 		lm10.setAge(35);
-		lm10.setPosition("Striker");
+		lm10.setPosition(Position.STRIKER);
 		addPlayer(lm10);
 		
+		addPlayer(t2.getId(), lm10.getId());
+
+		Player gr21 = new Player();
+		lm10.setName("Guido");
+		lm10.setSurname("Rodríguez");
+		lm10.setTeam("Real Betis");
+		lm10.setNationality("Argentina");
+		lm10.setAge(28);
+		lm10.setPosition(Position.MIDFIELDER);
+		addPlayer(gr21);
+		
 		addPlayer(t1.getId(), lm10.getId());
+
+
 		
 		//create game
 		Game g1 = new Game();
