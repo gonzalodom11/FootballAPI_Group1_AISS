@@ -396,6 +396,182 @@ public class MapTeamRepository implements TeamRepository{
 		
 		//create players for serie A
 		
+		Player am9 = new Player();
+		am9.setName("Morata");
+		am9.setSurname("Alvaro");
+		am9.setNationality("Spain");
+		am9.setTeam("Juventus");
+		am9.setAge(29);
+		am9.setPosition("Striker");
+		addPlayer(am9);
+		
+		addPlayer(t11.getId(), am9.getId());
+		
+		Player pd10 = new Player();
+		pd10.setName("Dybala");
+		pd10.setSurname("Paulo");
+		pd10.setNationality("Argentina");
+		pd10.setTeam("Juventus");
+		pd10.setAge(28);
+		pd10.setPosition("Striker");
+		addPlayer(pd10);
+		
+		addPlayer(t11.getId(), pd10.getId());
+		
+		
+		Player ml27 = new Player();
+		ml27.setName("Locatelli");
+		ml27.setSurname("Manuel");
+		ml27.setNationality("Italy");
+		ml27.setTeam("Juventus");
+		ml27.setAge(24);
+		ml27.setPosition("Midfielder");
+		addPlayer(ml27);
+		
+		addPlayer(t11.getId(), ml27.getId());
+		
+		Player zi11 = new Player();
+		zi11.setName("Ibrahimovic");
+		zi11.setSurname("Zlatan");
+		zi11.setNationality("Sweden");
+		zi11.setTeam("Milan");
+		zi11.setAge(40);
+		zi11.setPosition("Striker");
+		addPlayer(zi11);
+		
+		addPlayer(t12.getId(), zi11.getId());
+		
+		Player sc7 = new Player();
+		sc7.setName("Castillejo");
+		sc7.setSurname("Samuel");
+		sc7.setNationality("Spain");
+		sc7.setTeam("Milan");
+		sc7.setAge(27);
+		sc7.setPosition("Striker");
+		addPlayer(sc7);
+		
+		addPlayer(t12.getId(), sc7.getId());
+		
+		
+		Player sc7 = new Player();
+		sc7.setName("Castillejo");
+		sc7.setSurname("Samuel");
+		sc7.setNationality("Spain");
+		sc7.setTeam("Milan");
+		sc7.setAge(27);
+		sc7.setPosition("Striker");
+		addPlayer(sc7);
+		
+		addPlayer(t12.getId(), sc7.getId());
+		
+		
+		
+		Player og9 = new Player();
+		og9.setName("Giroud");
+		og9.setSurname("Olivier");
+		og9.setNationality("France");
+		og9.setTeam("Milan");
+		og9.setAge(35);
+		og9.setPosition("Striker");
+		addPlayer(og9);
+		
+		addPlayer(t12.getId(), og9.getId());
+		
+		
+		Player as7 = new Player();
+		as7.setName("Sanchez");
+		as7.setSurname("Alexis");
+		as7.setNationality("Chile");
+		as7.setTeam("Inter");
+		as7.setAge(33);
+		as7.setPosition("Midfielder");
+		addPlayer(as7);
+		
+		addPlayer(t13.getId(), as7.getId());
+		
+		
+		Player av22 = new Player();
+		av22.setName("Vidal");
+		av22.setSurname("Arturo");
+		av22.setNationality("Chile");
+		av22.setTeam("Inter");
+		av22.setAge(34);
+		av22.setPosition("Midfielder");
+		addPlayer(av22);
+		
+		addPlayer(t13.getId(), av22.getId());
+		
+		Player ml10 = new Player();
+		ml10.setName("Martinez");
+		ml10.setSurname("Lautaro");
+		ml10.setNationality("Argentina");
+		ml10.setTeam("Inter");
+		ml10.setAge(24);
+		ml10.setPosition("Striker");
+		addPlayer(ml10);
+		
+		addPlayer(t13.getId(), ml10.getId());
+		
+		Player rp1 = new Player();
+		rp1.setName("Patricio");
+		rp1.setSurname("Rui");
+		rp1.setNationality("Portugal");
+		rp1.setTeam("Roma");
+		rp1.setAge(34);
+		rp1.setPosition("Goalkeeper");
+		addPlayer(rp1);
+		
+		addPlayer(t14.getId(), rp1.getId());
+		
+		Player es92 = new Player();
+		es92.setName("El Shaarawy");
+		es92.setSurname("Stephan");
+		es92.setNationality("Italy");
+		es92.setTeam("Roma");
+		es92.setAge(29);
+		es92.setPosition("Striker");
+		addPlayer(es92);
+		
+		addPlayer(t14.getId(), es92.getId());
+		
+		Player so27 = new Player();
+		so27.setName("Oliveira");
+		so27.setSurname("Serigio");
+		so27.setNationality("Portugal");
+		so27.setTeam("Roma");
+		so27.setAge(29);
+		so27.setPosition("Midfielder");
+		addPlayer(so27);
+		
+		addPlayer(t14.getId(), so27.getId());
+		
+		
+		Player dd4 = new Player();
+		dd4.setName("Demme");
+		dd4.setSurname("Diego");
+		dd4.setNationality("Germany");
+		dd4.setTeam("Napoli");
+		dd4.setAge(30);
+		dd4.setPosition("Midfielder");
+		addPlayer(dd4);
+		
+		addPlayer(t15.getId(), dd4.getId());
+		
+		Player li24 = new Player();
+		li24.setName("Insigne");
+		li24.setSurname("Lorenzo");
+		li24.setNationality("Italy");
+		li24.setTeam("Napoli");
+		li24.setAge(30);
+		li24.setPosition("Midfielder");
+		addPlayer(li24);
+		
+		addPlayer(t15.getId(), li24.getId());
+		
+		//create players for bundesliga
+		
+		
+		
 		
 		
 		
