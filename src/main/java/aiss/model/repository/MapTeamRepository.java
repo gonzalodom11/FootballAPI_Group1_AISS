@@ -466,13 +466,197 @@ public class MapTeamRepository implements TeamRepository{
 		
 		//create games for premier league
 		
+		Game g6 = new Game();
+		g6.setTeamHome("Manchester City");
+		g6.setTeamAway("Liverpool");
+		g6.setGoalsHome(2);
+		g6.setGoalsAway(1);
+		g6.setDate("29.04.2022");
+		g6.setLeague("Premier League");
+		addGame(g6);
 		
+		Game g7 = new Game();
+		g7.setTeamHome("Manchester United");
+		g7.setTeamAway("Arsenal");
+		g7.setGoalsHome(5);
+		g7.setGoalsAway(7);
+		g7.setDate("01.04.2022");
+		g7.setLeague("Premier League");
+		addGame(g7);
+		
+		Game g8 = new Game();
+		g8.setTeamHome("Liverpool");
+		g8.setTeamAway("Manchester United");
+		g8.setGoalsHome(6);
+		g8.setGoalsAway(2);
+		g8.setDate("29.03.2022");
+		g8.setLeague("Premier League");
+		addGame(g8);
+		
+		Game g9 = new Game();
+		g9.setTeamHome("Manchester City");
+		g9.setTeamAway("Chelsea");
+		g9.setGoalsHome(10);
+		g9.setGoalsAway(3);
+		g9.setDate("08.02.2022");
+		g9.setLeague("Premier League");
+		addGame(g9);
+		
+		Game g10 = new Game();
+		g10.setTeamHome("Chelsea");
+		g10.setTeamAway("Liverpool");
+		g10.setGoalsHome(1);
+		g10.setGoalsAway(0);
+		g10.setDate("22.05.2022");
+		g10.setLeague("Premier League");
+		addGame(g10);
 		
 		//create games for serie A
 		
+		Game g11 = new Game();
+		g11.setTeamHome("Juventus");
+		g11.setTeamAway("Napoli");
+		g11.setGoalsHome(2);
+		g11.setGoalsAway(1);
+		g11.setDate("20.01.2022");
+		g11.setLeague("Serie A");
+		addGame(g11);
+		
+		
+		Game g12 = new Game();
+		g12.setTeamHome("Inter");
+		g12.setTeamAway("Milan");
+		g12.setGoalsHome(5);
+		g12.setGoalsAway(5);
+		g12.setDate("16.03.2022");
+		g12.setLeague("Serie A");
+		addGame(g12);
+		
+		Game g13 = new Game();
+		g13.setTeamHome("Roma");
+		g13.setTeamAway("Napoli");
+		g13.setGoalsHome(2);
+		g13.setGoalsAway(3);
+		g13.setDate("20.04.2022");
+		g13.setLeague("Serie A");
+		addGame(g13);
+		
+		Game g14 = new Game();
+		g14.setTeamHome("Juventus");
+		g14.setTeamAway("Inter");
+		g14.setGoalsHome(0);
+		g14.setGoalsAway(0);
+		g14.setDate("10.02.2022");
+		g14.setLeague("Serie A");
+		addGame(g14);
+		
+		Game g15 = new Game();
+		g15.setTeamHome("Milan");
+		g15.setTeamAway("Roma");
+		g15.setGoalsHome(3);
+		g15.setGoalsAway(1);
+		g15.setDate("30.05.2022");
+		g15.setLeague("Serie A");
+		addGame(g15);
+		
+		//create games for bundesliga
+		
+		Game g16 = new Game();
+		g16.setTeamHome("Bayern");
+		g16.setTeamAway("B. Dormund");
+		g16.setGoalsHome(5);
+		g16.setGoalsAway(2);
+		g16.setDate("16.04.2022");
+		g16.setLeague("Bundesliga");
+		addGame(g16);
+		
+		Game g17 = new Game();
+		g17.setTeamHome("Leipzig");
+		g17.setTeamAway("Mainz 05");
+		g17.setGoalsHome(6);
+		g17.setGoalsAway(1);
+		g17.setDate("13.04.2022");
+		g17.setLeague("Bundesliga");
+		addGame(g17);
+		
+		Game g18 = new Game();
+		g18.setTeamHome("Leverkusen");
+		g18.setTeamAway("B. Dormund");
+		g18.setGoalsHome(3);
+		g18.setGoalsAway(3);
+		g18.setDate("03.02.2022");
+		g18.setLeague("Bundesliga");
+		addGame(g18);
+		
+		Game g19 = new Game();
+		g19.setTeamHome("Bayern");
+		g19.setTeamAway("Mainz 05");
+		g19.setGoalsHome(8);
+		g19.setGoalsAway(3);
+		g19.setDate("16.01.2022");
+		g19.setLeague("Bundesliga");
+		addGame(g19);
+		
+		Game g20 = new Game();
+		g20.setTeamHome("Mainz 05");
+		g20.setTeamAway("Leverkusen");
+		g20.setGoalsHome(0);
+		g20.setGoalsAway(0);
+		g20.setDate("22.02.2022");
+		g20.setLeague("Bundesliga");
+		addGame(g20);
 		
 		
 		//create games for ligue 1
+		
+		Game g21 = new Game();
+		g21.setTeamHome("Paris Saint Germain");
+		g21.setTeamAway("Lyon");
+		g21.setGoalsHome(4);
+		g21.setGoalsAway(0);
+		g21.setDate("13.02.2022");
+		g21.setLeague("Ligue 1");
+		addGame(g21);
+		
+		Game g22 = new Game();
+		g22.setTeamHome("Monaco");
+		g22.setTeamAway("Rennes");
+		g22.setGoalsHome(1);
+		g22.setGoalsAway(0);
+		g22.setDate("17.01.2022");
+		g22.setLeague("Ligue 1");
+		addGame(g22);
+		
+		Game g23 = new Game();
+		g23.setTeamHome("Marsella");
+		g23.setTeamAway("Lyon");
+		g23.setGoalsHome(2);
+		g23.setGoalsAway(1);
+		g23.setDate("23.04.2022");
+		g23.setLeague("Ligue 1");
+		addGame(g23);
+		
+		Game g24 = new Game();
+		g24.setTeamHome("Monaco");
+		g24.setTeamAway("Paris Saint Germain");
+		g24.setGoalsHome(3);
+		g24.setGoalsAway(6);
+		g24.setDate("26.03.2022");
+		g24.setLeague("Ligue 1");
+		addGame(g24);
+		
+		
+		Game g25 = new Game();
+		g25.setTeamHome("Monaco");
+		g25.setTeamAway("Lyon");
+		g25.setGoalsHome(3);
+		g25.setGoalsAway(1);
+		g25.setDate("24.01.2022");
+		g25.setLeague("Ligue 1");
+		addGame(g25);
+		
+		
+		
 		
 		
 		//create Leagues
