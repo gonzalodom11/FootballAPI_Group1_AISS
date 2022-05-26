@@ -30,6 +30,7 @@ public interface TeamRepository {
 		public void addGame(Game g);
 		public Collection<Game> getAllGames();
 		public Game getGame(String gameId);
+		public Collection<Game> getGamesOfTeam(String teamId);
 		public void updateGame(Game g);
 		public void deleteGame(String gameId);
 		

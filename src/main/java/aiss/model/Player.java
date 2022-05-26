@@ -30,7 +30,11 @@ public class Player {
 
 
     public Player(String id, String name, String surname, String team, String nationality, int age,
+<<<<<<< HEAD
+    		String position) {
+=======
             Position position) {
+>>>>>>> main
         this.id = id;
         this.name = name;
         this.surname = surname;

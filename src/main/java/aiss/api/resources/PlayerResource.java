@@ -48,12 +48,15 @@ public class PlayerResource {
 	
 	@GET
 	@Produces("application/json")
-	public Collection<Player> getAll(@QueryParam("nationality") String nationality)
+	public Collection<Player> getAll(@QueryParam("nationality") String nationality, @QueryParam("ageOver") Integer ageOver, @QueryParam("ageUnder") Integer ageUnder, @QueryParam("position") String position)
 	{	
 		List<Player> result = new ArrayList<>();
 		
+		if (ageOver<0) throw new BadRequestException("ageOver must be >=0 but was "+ageOver+"!");
+		if (ageUnder<0) throw new BadRequestException("ageUnder must be >=0 but was "+ageUnder+"!");
+		
 		for (Player player: repository.getAllPlayers()) {
-			if (nationality == null || player.getNationality().equals(nationality)) {
+			if ((nationality == null || player.getNationality().equals(nationality)) && (ageOver == null || player.getAge() >= ageOver) && (ageUnder == null || player.getAge() <= ageUnder) && (position == null || position.equals(player.getPosition()))) {
 				result.add(player);
 			}
 		}
@@ -84,7 +87,7 @@ public class PlayerResource {
 			throw new BadRequestException("The name of the player must not be null");
 		
 		repository.addPlayer(player);
-		repository.addPlayer(player.getTeam(), player.getId());
+		//repository.addPlayer(player.getTeam(), player.getId());
 
 		// Builds the response. Returns the song the has just been added.
 		UriBuilder ub = uriInfo.getAbsolutePathBuilder().path(this.getClass(), "get");

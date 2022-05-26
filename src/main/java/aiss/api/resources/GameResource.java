@@ -52,16 +52,38 @@ public class GameResource {
 	@GET
 	@Produces("application/json")
 	public Collection<Game> getAll(@QueryParam("goals") Integer goals, 
-			@QueryParam("team")String team)
+			@QueryParam("team")String teamId, @QueryParam("limit") Integer limit, @QueryParam("offset") int offset, @QueryParam("order") String order)
 	{
 		List<Game> result = new ArrayList<Game>();
 		for (Game game: repository.getAllGames()) {
 			if ((goals == null || (game.getGoalsHome() + game.getGoalsAway()) >= goals) && 
-					(team == null || game.getTeamHome().replaceAll("\\s+","").equals(team) || game.getTeamAway().replaceAll("\\s+","").equals(team))) {
+					(teamId == null || game.getTeamHome().getId().equals(teamId) || game.getTeamAway().getId().equals(teamId))) {
 				result.add(game);
 			}
 		}
-		return result;
+		if (limit == null) {
+			return result;
+		}
+		if (offset<0) throw new IllegalArgumentException("Offset must be >=0 but was "+offset+"!");
+	    if (limit<-1) throw new IllegalArgumentException("Limit must be >=-1 but was "+limit+"!");
+
+	    if (offset>0) {
+	        if (offset >= result.size()) {
+	            return result.subList(0, 0); //return empty.
+	        }
+	        if (limit >-1) {
+	            //apply offset and limit
+	            return result.subList(offset, Math.min(offset+limit, result.size()));
+	        } else {
+	            //apply just offset
+	            return result.subList(offset, result.size());
+	        }
+	    } else if (limit >-1) {
+	        //apply just limit
+	        return result.subList(0, Math.min(limit, result.size()));
+	    } else {
+	        return result.subList(0, result.size());
+	    }
 	}
 	
 	
@@ -83,7 +105,7 @@ public class GameResource {
 	@Consumes("application/json")
 	@Produces("application/json")
 	public Response addGame(@Context UriInfo uriInfo, Game game) {
-		if (game.getTeamHome() == null || "".equals(game.getTeamHome()) ||game.getTeamAway() == null || "".equals(game.getTeamAway()))
+		if (game.getTeamHome() == null  ||game.getTeamAway() == null )
 			throw new BadRequestException("The name of the teams must not be null");
 		
 		repository.addGame(game);
@@ -143,6 +165,15 @@ public class GameResource {
 		
 		return Response.noContent().build();
 	}
+	
+	@GET
+	@Path("/teams/{teamId}")
+	@Produces("application/json")
+	public Collection<Game> getGamesOfTeam(@PathParam("teamId") String gameId)
+	{		
+		return repository.getGamesOfTeam(gameId);
+	}
+	
 	
 }
 
