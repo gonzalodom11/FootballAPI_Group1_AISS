@@ -128,6 +128,6 @@ A league has an id, name, country,  a list of teams and a list of games. JSON re
 ```
 
 	
-If you want to use FutData, then click the link below:
+If you want to use FutData, then click the link below here:
 https://futdata-349615.appspot.com/
 
