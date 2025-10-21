@@ -3,8 +3,8 @@ package aiss.model;
 public class Game {
 	
 	private String id;
-	private String teamHome;
-	private String teamAway;
+	private Team teamHome;
+	private Team teamAway;
 	private Integer goalsHome;
 	private Integer goalsAway;
 	private String date;
@@ -14,7 +14,7 @@ public class Game {
 		
 	}
 	
-	public Game(String id, String teamHome, String teamAway, Integer goalsHome, Integer goalsAway, String date, String league, String season) {
+	public Game(String id, Team teamHome, Team teamAway, Integer goalsHome, Integer goalsAway, String date, String league, String season) {
 		this.id = id;
 		this.teamHome = teamHome;
 		this.teamAway = teamAway;
@@ -24,7 +24,7 @@ public class Game {
 		this.league = league;
 	}
 
-	public Game(String teamHome, String teamAway, Integer goalsHome, Integer goalsAway, String date, String league) {
+	public Game(Team teamHome, Team teamAway, Integer goalsHome, Integer goalsAway, String date, String league) {
 		this.teamHome = teamHome;
 		this.teamAway = teamAway;
 		this.goalsHome = goalsHome;
@@ -41,19 +41,19 @@ public class Game {
 		this.id = id;
 	}
 
-	public String getTeamHome() {
+	public Team getTeamHome() {
 		return teamHome;
 	}
 
-	public void setTeamHome(String teamHome) {
+	public void setTeamHome(Team teamHome) {
 		this.teamHome = teamHome;
 	}
 
-	public String getTeamAway() {
+	public Team getTeamAway() {
 		return teamAway;
 	}
 
-	public void setTeamAway(String teamAway) {
+	public void setTeamAway(Team teamAway) {
 		this.teamAway = teamAway;
 	}
 
@@ -87,6 +87,10 @@ public class Game {
 
 	public void setLeague(String league) {
 		this.league = league;
+	}
+	
+	public int getGoals() {
+		return goalsHome + goalsAway;
 	}
 	
 	

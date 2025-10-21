@@ -1,5 +1,6 @@
 package aiss.model.repository;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -8,7 +9,9 @@ import java.util.Map;
 import aiss.model.Game;
 import aiss.model.League;
 import aiss.model.Player;
+import aiss.model.Position;
 import aiss.model.Team;
+import aiss.model.Player.Position;
 
 public class MapTeamRepository implements TeamRepository{
 	
@@ -40,7 +43,9 @@ public class MapTeamRepository implements TeamRepository{
 		
 		// create teams for la liga
 		Team t1 = new Team();
+
 		t1.setName("Sevilla FC");
+
 		t1.setLeague("La Liga");
 		t1.setCoach("Julen Lopetegui");
 		addTeam(t1);
@@ -386,9 +391,11 @@ public class MapTeamRepository implements TeamRepository{
 		cr7.setName("Ronaldo");
 		cr7.setSurname("Cristiano");
 		cr7.setNationality("Portugal");
+
 		cr7.setTeam("Manchester United");
+
 		cr7.setAge(37);
-		cr7.setPosition("Striker");
+		cr7.setPosition(Position.STRIKER);
 		addPlayer(cr7);
 		
 		addPlayer(t10.getId(), cr7.getId());
@@ -583,13 +590,24 @@ public class MapTeamRepository implements TeamRepository{
 		lm10.setTeam("Paris Saint Germain");
 		lm10.setNationality("Argentina");
 		lm10.setAge(35);
-		lm10.setPosition("Striker");
+		lm10.setPosition(Position.STRIKER);
 		addPlayer(lm10);
 		
-		addPlayer(t21.getId(), lm10.getId());
+
+		addPlayer(t2.getId(), lm10.getId());
+
+		Player gr21 = new Player();
+		lm10.setName("Guido");
+		lm10.setSurname("Rodríguez");
+		lm10.setTeam("Real Betis");
+		lm10.setNationality("Argentina");
+		lm10.setAge(28);
+		lm10.setPosition(Position.MIDFIELDER);
+		addPlayer(gr21);
 		
-		
-		
+		addPlayer(t1.getId(), lm10.getId());
+
+
 		
 		
 		
@@ -1125,6 +1143,17 @@ public class MapTeamRepository implements TeamRepository{
 	@Override
 	public void removeGameLeague(String leagueId, String gameId) {
 		getLeague(leagueId).deleteGame(gameId);
+	}
+
+	@Override
+	public Collection<Game> getGamesOfTeam(String teamId) {
+		List<Game> gameList = new ArrayList<>();
+		for(Game game : getAllGames()) {
+			if (game.getTeamHome().getId().equals(teamId) || game.getTeamAway().getId().equals(teamId)) {
+				gameList.add(game);
+			}
+		}
+		return gameList;
 	}
 
 }

@@ -19,6 +19,8 @@ import org.jboss.resteasy.spi.NotFoundException;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 
+import aiss.api.resources.comparators.ComparatorNameTeam;
+import aiss.api.resources.comparators.ComparatorNameTeamReverse;
 import aiss.model.Game;
 import aiss.model.League;
 import aiss.model.Player;
@@ -54,23 +56,16 @@ public class LeagueResource {
 
 	@GET
 	@Produces("application/json")
-	public Collection<League> getAll(@QueryParam("order") String order, 
-			@QueryParam("name") String name)
+	public Collection<League> getAll(@QueryParam("isEmpty") Boolean isEmpty)
 	{
-		/*List<Team> result = new ArrayList<>(); 
-		result = (List<Team>) repository.getAllTeams();
-		
-		if (order != null) {
-			if (order.equals("name")) {
-				Collections.sort(result, new ComparatorNameTeam());
-			} else if (order.equals("-name")) {
-				Collections.sort(result, new ComparatorNameTeamReverse());
-			} else {
-				throw new BadRequestException("The order parameter must be 'name' or '-name'.");
+		List<League> result = new ArrayList<>();
+		for(League league : repository.getAllLeagues()) {
+			if(isEmpty == null || (isEmpty && (league.getGames() == null || league.getGames().size() == 0)
+					|| (!isEmpty && (league.getGames() != null && league.getGames().size() > 0)))){
+				result.add(league);
 			}
 		}
-		return result;*/
-		return repository.getAllLeagues();
+		return result;
 	}
 	
 	
